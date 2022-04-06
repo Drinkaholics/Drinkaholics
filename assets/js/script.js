@@ -33,4 +33,14 @@ window.onclick = function(event) {
       }
     }
   }
+
+//function to create buttons
+var createCityButton = function(cityName) {
+    var buttonEl = document.createElement("button");
+    buttonEl.textContent = cityName;
+    buttonEl.className = buttonClass;
+    buttonEl.setAttribute("data-city", cityName);
+    buttonEl.setAttribute("id", cityName.split(" ").join(""));
+    searchHistoryEl.insertBefore(buttonEl, searchHistoryEl.firstChild);
+}
 }

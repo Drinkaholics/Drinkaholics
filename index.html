@@ -1,79 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="_bar is a Cocktail bar in Sweden." />
-        <meta name="keywords" content="sweden, cocktail, bar" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Drinkaholics</title>
+</head>
 
-        <title>Drinkaholics</title>
-        <link rel="stylesheet" href="./assets/css/style.css" />
-        
-    </head>
-
-    <body>
-        <header>
-            <a href="index.html">
-                <h1 id="logo">Drinkaholics</h1>
-            </a>
-            <nav id="menu">
-                    <li>
-                        <a href="index.html" class="active">Go Home</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div id="hero-outer">
-            <div id="hero-image">
-                <div id="hero-text">
-                    <h2>Welcome!</h2>
-                    <p>Enjoy a cocktail in our bar!</p>
-                    <br />
-                    <button id="book" onclick="document.location='menu.html'"></button>
+<body>
+    <!--header-->
+    <header class="d-flex flex-column justify-content-around">
+        <h1 class="text-center bold">Drinkaholics</h1>
+    </header>
+    <!--main weather content-->
+    <main class="p-3 my-2">
+        <div class="container-fluid">
+            <div class="row">
+                <!--left column-->
+                <div class="col-12 col-md-3 mb-3">
+                    <!--user input card-->
+                    <div class="card border-0 mb-2">
+                        <h2 class="card-title bold">Search for drinks:</h2>
+                        <form class="card-text" id="search-form">
+                            <input input type="text" placeholder="Type your drink" id="city-name" class="form-control form-control-lg border border-secondary my-3">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-button">Search</button>
+                        </form>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm my-3 mr-2 w-50" id="clear-history">Reset Drink</button>
+                        </div>
+                    </div>
+                    <!--search history div-->
+                    <div class="pt-2 divider history" id="search-history"></div>
                 </div>
             </div>
         </div>
-        <footer>
-            <div id="info">
-                <div class="details">
-                    <h3>Opening Hours:</h3>
-                    <ul>
-                        <li>Monday-Thursday: 5pm-11:30pm</li>
-                        <li>Friday & Saturday: 5pm-1am</li>
-                        <li>Sunday: Closed</li>
-                    </ul>
-                </div>
-                <div class="details">
-                    <h3>Contanct:</h3>
-                    <ul>
-                        <li>(+46) 701234567</li>
-                        <li>info@_bar.com</li>
-                    </ul>
-                </div>
-                <div class="details">
-                    <h3>Address:</h3>
-                    <ul>
-                        <li>Barside street 13</li>
-                        <li>Lagan</li>
-                        <li>341 50</li>
-                    </ul>
-                </div>
-            </div>
-    
-                <ul class="social-networks">
-                    <li>
-                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in a new tab)"><i class="fab fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page (opens in a new tab)"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in a new tab)"><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-        </footer>
-        <!-- font awsome script -->
-        <script src="https://kit.fontawesome.com/917a6f9ee0.js" crossorigin="anonymous"></script>
-    </body>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
 </html>

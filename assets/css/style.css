@@ -1,280 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Roboto+Condensed:ital,wght@1,300&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-body,
-html {
-    height: 100%;
-}
-body {
-    font-family: "Didact Gothic", sans-serif;
-    font-weight: 300;
-    color: white;
+  box-sizing: border-box;
 }
 
-/* headings and logo */
-h1,
-h2,
-h3 {
-    font-family: "Roboto Condensed", sans-serif;
-    letter-spacing: 2px;
+header {
+  height: 200px;
+  background-image: url("../img/img-1.jpg");
+  color: rgb(255, 255, 255);
 }
 
-#logo {
-    font-weight: bold;
-    font-size: 4rem;
-    float: left;
-    margin-left: 30px;
-    color: rgb(235, 99, 8);
+/*custom CSS*/
+/*border for button history div*/
+.divider {
+  border-top: 2px solid rgb(128, 128, 128);
 }
 
-/* navigation links*/
-
-#menu {
-    font-size: 110%;
-    letter-spacing: 2px;
-    color: #3a3a3a;
+/*bold font*/
+.bold {
+  font-weight: bold;
 }
 
-#menu,
-#logo {
-    line-height: 75px;
-    height: 100px;
-}
-#menu li {
-    float: right;
-    list-style-type: none;
-    margin-right: 30px;
-}
-#menu a {
-    text-decoration: none;
-    color: inherit;
-}
-#menu a:hover {
-    border-bottom: 1px solid rgb(235, 99, 8);
+/*current and forecast condition font size*/
+.font-size {
+  font-size: 18px;
 }
 
-.active {
-    border-bottom: 1px solid rgb(235, 99, 8);
-}
-/* hero-image */
-#hero-outer {
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-}
-#hero-image {
-    background: url("../images/pexels-rachel-claire-5865312.jpg") no-repeat center center;
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-}
-
-#hero-text {
-    text-align: center;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 200%;
-    letter-spacing: 5px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/* button style */
-#book {
-    text-decoration: none;
-    color: white;
-    border: solid 1px black;
-    background-color: rgb(235, 99, 8);
-    font-size: 16px;
-    padding: 16px 32px;
-    text-align: center;
-    transition: 0.3s;
-    cursor: pointer;
- 
-}
-#book:hover {
-    background-color: rgb(204, 87, 9);
-}
-
-/* times contact and address */
-#info {
-    background-color: rgb(54, 50, 47);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    justify-content: space-evenly;
-    display: flex;
-}
-.details li{
-    list-style-type: none;
-    text-align: left;
-}
-.details h3{
-    padding-bottom: 10px;
-    color: rgb(204, 87, 9);
-}
-
-/* footer */
-
-footer {
-    background-color: rgb(54, 50, 47);
-}
-.social-networks {
-    text-align: center;
-}
-.social-networks > li {
-    display: inline;
-}
-.social-networks i {
-    font-size: 160%;
-    margin: 1%;
-    padding: 1%;
-    color: rgb(235, 99, 8);
-}
-/*style for coctail menu */
-
-#list {
-    padding: 10px;
-    font-size: 3.5rem;
-    background-color: rgb(235, 99, 8);
-    color: white;
-    text-align: center;
-}
-#bar-menu {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    position: relative;
-}
-.cocktail > img {
-    overflow: hidden;
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-.cocktail {
-    width: 350px;
-    height: 350px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-    margin: 20px auto;
-   
-}
-.items {
-    text-transform: uppercase;
-    color: rgb(235, 99, 8);
-    margin-top: 5px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-.ingredients {
-    text-transform: capitalize;
-    font-size: 1rem;
-    text-align: center;
-    color: #3a3a3a;
-}
-
-/*style for form */
-#form {
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    min-height: calc(100vh - 160px);
-}
-#container {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0 30px;
-    width: 600px;
-    height: 600px;
-    overflow: hidden;
-    display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-#picture {
-    height: 600px;
-    overflow: hidden;
-    display: inline-block;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-#make {
-    border-bottom: 1px solid rgb(235, 99, 8);
-    text-align: center;
-    padding-top: 7px;
-}
-input[type="text"],
-[type="tel"],
-[type="number"],
-[type="date"],
-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-}
-input[type="submit"] {
-    background-color: rgb(235, 99, 8);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
-}
-input[type="submit"]:hover {
-    background-color: rgb(204, 87, 9);
-}
-/* thank you for your booking style */
-.thanks i {
-    color: rgb(235, 99, 8);
-    font-size: 140%;
-}
-.thanks {
-    color: #3a3a3a;
-    margin-top: 50px;
-    margin-left: 30px;
-}
-
-/* Media queries */
-/* For small screen sizes 600px and down */
-@media screen and (max-width: 600px) {
-    #menu {
-        display: flex;
-        width: 170px;
-        line-height: normal;
-        font-size: 1.1rem;
-        transform: rotate(180deg);
-        height: fit-content;
-    }
-    #menu li{
-        transform: rotate(-180deg);
-    
-    }
-    #hero-text{
-        font-size: 1.2rem;
-    }
-    #book{
-        font-size: 1rem;
-    }
-    #picture {
-        display: none;
-    }
-    #info{
-        flex-direction: column;
-        padding-left: 5px;
-    }
-    .details h3{
-        padding-bottom: 0;
-    }
+/*card styling*/
+.card-style {
+  min-width: 150px;
+  color: rgb(255, 255, 255);
+  background: rgb(112, 172, 197);
 }
