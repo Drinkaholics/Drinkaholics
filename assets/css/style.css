@@ -30,3 +30,14 @@ header {
   color: rgb(255, 255, 255);
   background: rgb(112, 172, 197);
 }
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
