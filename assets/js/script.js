@@ -17,6 +17,7 @@ var displayonsearch = function() {
       ingredient += currentlist[i] + ",";
     }
     var apiUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=" + ingredient.slice(0, -1);
+    console.log("this is api to filter the list based on ingredients --------- " + apiUrl);
     fetch(apiUrl).then(function(response) {
       response.json().then(function(data) {
         if (data.drinks == "None Found") {
@@ -43,7 +44,7 @@ var displayitem = function (drinkid) {
   var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkid;
   fetch(apiUrl).then(function(response) {
     response.json().then(function(data) {
-      console.log(data);
+      console.log("this is API to find the drink detail ------- " + apiUrl);
       var drink = data.drinks[0];
       var item_name = document.createElement("h2");
       var item_image = document.createElement("img");
@@ -96,6 +97,7 @@ var clearlist = function () {
 
 var loadingoption = function () {
   var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+  console.log("This is api to load all options into dropdown option ---- " + apiUrl);
   fetch(apiUrl).then(function(response) {
     response.json().then(function(data) {
       for (var i = 0; i < data.drinks.length; i++) {
