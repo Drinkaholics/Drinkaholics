@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Drinkaholics</title>
+</head>
+
+<body>
+    <!--header-->
+    <header class="d-flex flex-column justify-content-around">
+        <h1 class="text-center bold">Drinkaholics</h1>
+    </header>
+    <!--main weather content-->
+    <main class="p-3 my-2">
+        <div class="container-fluid">
+            <div class="row">
+                <!--left column-->
+                <div class="col-12 col-md-3 mb-3">
+                    <!--user input card-->
+                    <div class="card border-0 mb-2">
+                        <h2 class="card-title bold">Search for drinks:</h2>
+                        <form class="card-text" id="search-form">
+                            <input input type="text" placeholder="Type your drink" id="ingredients" class="form-control form-control-lg border border-secondary my-3">
+                            <button type="click" class="btn btn-primary btn-block btn-lg" id="submit-button">Search</button>
+                        </form>
+                        <div class="d-flex justify-content-between">
+                            <button class="btn btn-outline-primary btn-sm my-3 mr-2 w-50" id="reset">Reset Drink</button>
+                        </div>
+                    </div>
+                    <!--search history div-->
+                    <div class="pt-2 divider history">
+                        <ul id="search-history"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
