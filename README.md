@@ -56,7 +56,7 @@ INSERT OUR LOGO
 
 ## Our Deployed App; Link to Website and Screenshots
 
-link placeholder
+https://drinkaholics.github.io/Drinkaholics/
 
 a screenshot of our website
 
