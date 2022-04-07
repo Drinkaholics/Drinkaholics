@@ -24,15 +24,17 @@
                     <div class="card border-0 mb-2">
                         <h2 class="card-title bold">Search for drinks:</h2>
                         <form class="card-text" id="search-form">
-                            <input input type="text" placeholder="Type your drink" id="city-name" class="form-control form-control-lg border border-secondary my-3">
-                            <button type="submit" class="btn btn-primary btn-block btn-lg" id="submit-button">Search</button>
+                            <input input type="text" placeholder="Type your drink" id="ingredients" class="form-control form-control-lg border border-secondary my-3">
+                            <button type="click" class="btn btn-primary btn-block btn-lg" id="submit-button">Search</button>
                         </form>
                         <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-sm my-3 mr-2 w-50" id="clear-history">Reset Drink</button>
+                            <button class="btn btn-outline-primary btn-sm my-3 mr-2 w-50" id="reset">Reset Drink</button>
                         </div>
                     </div>
                     <!--search history div-->
-                    <div class="pt-2 divider history" id="search-history"></div>
+                    <div class="pt-2 divider history">
+                        <ul id="search-history"></ul>
+                    </div>
                 </div>
             </div>
         </div>
