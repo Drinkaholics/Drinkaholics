@@ -4,42 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <title>Recipe Search</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Drinkaholics</title>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
-<body>
-    <!--header-->
-    <header class="d-flex flex-column justify-content-around">
-        <h1 class="text-center bold">Drinkaholics</h1>
+  </head>
+  <body>
+  <div class= "background">
+    <header>
+      <h1>Drinkaholics</h1>
+      <a href="https://github.com/Drinkaholics/Drinkaholics" target="_blank">Who We Are</a>  
     </header>
-    <!--main weather content-->
-    <main class="p-3 my-2">
-        <div class="container-fluid">
-            <div class="row">
-                <!--left column-->
-                <div class="col-12 col-md-3 mb-3">
-                    <!--user input card-->
-                    <div class="card border-0 mb-2">
-                        <h2 class="card-title bold">Search for drinks:</h2>
-                        <form class="card-text" id="search-form">
-                            <input input type="text" placeholder="Type your drink" id="ingredients" class="form-control form-control-lg border border-secondary my-3">
-                            <button type="click" class="btn btn-primary btn-block btn-lg" id="submit-button">Search</button>
-                        </form>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-outline-primary btn-sm my-3 mr-2 w-50" id="reset">Reset Drink</button>
-                        </div>
-                    </div>
-                    <!--search history div-->
-                    <div class="pt-2 divider history">
-                        <ul id="search-history"></ul>
-                    </div>
-                </div>
-            </div>
+  
+      <section class="hero">
+          <div class="hero-cta">
+            <h4>Love to drink cocktails? You on the right page!</h4>
+            <p>
+                Drinkaholics is a cocktail creation application tool 
+                that allows individuals to search for cocktails, or pick ingredients they have at their disposals and mix them to show what cocktails they can make out of them.
+            </p>
+          </div>
+      </section>
+      
+      <main>
+        <div class="card-search">
+          <h4 id="Search">Search For Drinks:</h4>
+          <form id="search-form" class="card-body">
+            <!-- <label class="form-label" for="recipe-search">Please enter a recipe name, ingredient or diet type</label> -->
+            <input name="recipe" id="recipeSearch" type="text" autofocus="true" class="form-input" placeholder="Type your favorite Drinkaholics drink" />
+            <button type="search" class="btn" id="searchBtn">Search</button>
+          </form>
         </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+  
+        <!--Search results desplayed here -->
+        <div class="grid-container">
+          <div class="grid-x grid-margin-x" id="cards-container">
+          </div>
+        </div>
+         
+        <!-- Modal HTML embedded directly into document -->
+        <div id="food-modal" class="modal">
+          <div id="htmlText2">
+          </div>
+        </div>
+  
+      </main>
+  </div>
+  
+    <footer>
+      <h6>
+        Made by The Team 3 UofT
+      </h6>
+      <div>
+          &copy; Drinkaholics
+      </div>
+    </footer>
+      
+          <!-- foundation-float.min.css: Compressed CSS with legacy Float Grid -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+
+      <!-- foundation-prototype.min.css: Compressed CSS with prototyping classes -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+
+      <!-- foundation-rtl.min.css: Compressed CSS with right-to-left reading direction -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+      <!-- jQuery Modal -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+      <script src="./assets/js/script.js"></script> 
+
+    </div>
+  </body>
+
 </html>
