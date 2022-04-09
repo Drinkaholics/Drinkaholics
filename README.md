@@ -14,3 +14,5 @@ When I press search button without any inputs in the input field
 Then I will be re-directed to the full list of drinks at the bottom of the webpage.
 When I navigate the the bottom of the page and selected a checkbox beside a specific alcohol
 Then only drinks with that specific alcohol will remain visible
+
+https://drinkaholics.github.io/Drinkaholics/
