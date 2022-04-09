@@ -1,43 +1,202 @@
-* {
-  box-sizing: border-box;
+:root {
+  --primary-color: #05537b;
+  --secondary-color: rgb(172, 122, 61);
+  --tertiary-color: rgb(39, 37, 37);
 }
 
+ html {
+  height: 100%;
+}
+
+/* set styles for the background image */
+.background {
+  background: url('../img/img-1.jpg');
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* set styles for the header */
 header {
-  height: 200px;
-  background-image: url("../img/img-1.jpg");
-  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  position:sticky;
+  position: -webkit-sticky;
+  top: 0;
+  z-index: 9999;
 }
 
-/*custom CSS*/
-/*border for button history div*/
-.divider {
-  border-top: 2px solid rgb(128, 128, 128);
-}
-
-/*bold font*/
-.bold {
+header h1 {
+  font-family: Space Bd BT;
+  font-size: 40px;
   font-weight: bold;
+  color: white;
+  margin-left: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+  
 }
 
-/*current and forecast condition font size*/
-.font-size {
-  font-size: 18px;
+header a:hover {
+  color: whitesmoke;
+  text-shadow:none;
 }
 
-/*card styling*/
-.card-style {
-  min-width: 150px;
-  color: rgb(255, 255, 255);
-  background: rgb(112, 172, 197);
+header a {
+  text-shadow:none;
+  margin: 20px;
+  font-size: 1.55vw;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+  font-family: Space Bd BT;
+  color: aqua;
 }
 
-.flex-row {
+.hero {
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 50px;
+  font-family: Space Bd BT;
+  color: #eae0c8;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+  font-size: 20px;
 }
 
-.flex-column {
+.hero-cta h4{
+  color: #eae0c8;
+  font-size: 35px;
+  font-family: Space Bd BT;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+}
+
+/*styles for the search box */
+.card-search {
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+  margin-bottom: 40px;
+  margin-left: 25%;
+  border-radius: 30px;
+}
+
+#recipeSearch {
+  border-radius: 10px;
+}
+
+#chooselist {
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  color:rgb(189, 187, 187);
+}
+
+input.form-input {
+  color:rgb(22, 22, 22);
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+}
+
+.card-search button {
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#Search {
+  font-family: Space Bd BT;
+}
+
+
+/* styles for the result cards */
+.drink-title {
+  padding-top: 10px;
+  color: var(--primary-color);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.drink-title:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  margin-top: 70px;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto;
+}
+
+.closeBtn {
+  margin: 10px;
+}
+
+#btnClose {
+  margin-top: 20px;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(9, 9, 114);
+}
+
+.card-detail {
+  font-weight: bold;
+  color: rgb(9, 9, 114);
+}
+
+.sourceURL:hover {
+  text-decoration: underline;
+}
+
+footer {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  border: 1px whitesmoke solid;
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer h6 {
+  font-family: Space Bd BT;
+  font-size: 15px;
+  font-weight: lighter;
+  margin-left: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+}
+
+footer div {
+  font-family: Space Bd BT;
+  font-size: 15px;
+  font-weight: lighter;
+  text-align: right;
+  margin-right: 10px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 9);
+}
+
+/* MEDIA QUERY FOR Mobile phones and smaller */
+@media screen and (max-width: 575px) {
+  header {
+    justify-content: center;
+    position: relative;
+  }
+
+  menu {
+    text-align: center;
+    font-size: 25px;
+  }
 }
