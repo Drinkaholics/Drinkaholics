@@ -32,13 +32,18 @@
       
       <main>
         <div class="card-search">
-          <h4 id="Search">Search For Drinks:</h4>
+          <h4 id="Search">Search For Drinks <br> or <br> Use Dropdown Menu</h4>
           <form id="search-form" class="card-body">
+            <select name="chooseingredient" id="chooselist">
+                <option value="" disabled selected hidden>Choose an ingredient</option>
+                <option value=""></option>
+
             <!-- <label class="form-label" for="recipe-search">Please enter a recipe name, ingredient or diet type</label> -->
             <input name="recipe" id="recipeSearch" type="text" autofocus="true" class="form-input" placeholder="Type your favorite Drinkaholics drink" />
             <button type="search" class="btn" id="searchBtn">Search</button>
           </form>
         </div>
+        
   
         <!--Search results desplayed here -->
         <div class="grid-container">
