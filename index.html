@@ -13,69 +13,70 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   </head>
 
-  <body>
-      <div class= "background">
-          <header>
-              <h1>Drinkaholics</h1>
-              <a href="https://github.com/Drinkaholics/Drinkaholics" target="_blank">Who We Are</a>  
-            </header>
+<body>
+    <div class= "background">
+        <header>
+            <h1>Drinkaholics</h1>
+            <a href="https://github.com/Drinkaholics/Drinkaholics" target="_blank">Who We Are</a>  
+        </header>
             
-            <section class="hero">
-                <div class="hero-cta">
-                    <h4>Love to drink cocktails? You on the right page!</h4>
-                    <p>
-                        Drinkaholics is a cocktail creation application tool 
-                        that allows individuals to search for cocktails, or pick ingredients they have at their disposals and mix them to show what cocktails they can make out of them.
-                    </p>
-                </div>
-            </section>
-            
-            <main>
-                <div class="card-search">
-                    <h4 id="Search">Search For Drinks <br> or <br> Use Dropdown Menu</h4>
-                    <form id="search-form" class="card-body">
-                        <select name="chooseingredient" id="chooselist">
-                            <option value="" disabled selected hidden>Choose an ingredient</option>
-                            <option value=""></option>
-                            <input name="recipe" id="recipeSearch" type="text" autofocus="true" class="form-input" placeholder="Type your favorite Drinkaholics drink" />
-                            <button type="search" class="btn" id="searchBtn">Search</button>
-                    </form>
-                </div>
-
-                <!--Search results desplayed here -->
-                <div class="grid-container">
-                    <div class="grid-x grid-margin-x" id="cards-container">
-
-                    </div>
-                </div>
-                
-                <!-- Modal HTML embedded directly into document -->
-                <div id="drink-modal" class="modal">
-                    <div id="htmlText2">
-
-                    </div>
-                </div>
-            
-            </main>
-        </div>
-        
-        <footer>
-            <h6>
-                Made by The Team 3 UofT
-            </h6>
-            <div>
-                &copy; Drinkaholics
+        <section class="hero">
+            <div class="hero-cta">
+                <h4>Love to drink cocktails? You on the right page!</h4>
+                <p>
+                    Drinkaholics is a cocktail creation application tool 
+                    that allows individuals to search for cocktails, or pick ingredients they have at their disposals and mix them to show what cocktails they can make out of them.
+                </p>
             </div>
-        </footer>
-        
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
-        <!-- jQuery Modal -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-        <script src="./assets/js/script.js"></script> 
+        </section>
+            
+        <main>
+            <div class="card-search">
+                <h4 id="Search">Search For Drinks <br> or <br> Use Dropdown Menu</h4>
+                <form id="search-form" class="card-body">
+                    <select name="chooseingredient" id="chooselist">
+                        <option value="" disabled selected hidden>Choose an ingredient</option>
+                        <option value=""></option>
+                        <input name="recipe" id="recipeSearch" type="text" autofocus="true" class="form-input" placeholder="Type your favorite Drinkaholics drink" />
+                        <button type="search" class="btn" id="searchBtn">Search</button>
+                </form>
+            </div>
+
+            <!--Search results desplayed here -->
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x" id="cards-container">
+
+                </div>
+            </div>
+                
+            <!-- Modal HTML embedded directly into document -->
+            <div id="drink-modal" class="modal">
+                <div id="htmlText2">
+
+                </div>
+            </div>
+            
+        </main>
     </div>
+        
+    <footer>
+        <h6>
+            Made by The Team 3 UofT
+        </h6>
+        <div>
+            &copy; Drinkaholics
+        </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-prototype.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-rtl.min.css" crossorigin="anonymous">
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="./assets/js/script.js"></script> 
+    </div>
+    
 </body>
 
 </html>
