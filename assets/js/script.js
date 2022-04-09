@@ -1,104 +1,127 @@
-var userFormEl = document.querySelector("#search-form");
-var nameInputEl = document.querySelector("#recipeSearch");
+var searchbar = document.querySelector("#ingredients");
+var searchbtn = document.querySelector("#submit-button")
+var resetbtn = document.querySelector("#reset");
+var ingredientlist = document.querySelector("#search-history");
+var display = document.querySelector("#displaylist");
+var choose = document.querySelector("#chooselist");
+var itemtitle = document.querySelector("#iteminfo");
+var currentlist = [];
 
-//Global Variables
-var apiKey = "76fc45feadbe46379e4c23a107066a2f";
-
-var formSumbitHandler = function(event) {
-    //Prevents browser from sending the form's input data to a URL
-    event.preventDefault();
-
-    //get value from input element
-    var recipeSearch = nameInputEl.value.trim();
-
-    if (recipeSearch) {
-      searchRecipies(recipeSearch);
-      nameInputEl.value = "";
-      document.getElementById("searchBtn").style.background='#05537b';
-    } else {
-        alert("Invalid entry");
-      document.getElementById("searchBtn").style.background='#05537b';
+var displayonsearch = function() {
+  clearlist();
+  if (currentlist.length == 0) {
+    return;
+  } else {
+    var ingredient =  "";
+    for (var i = 0; i < currentlist.length; i++) {
+      ingredient += currentlist[i] + ",";
     }
-    }
-
-//function calls spooacular API to get recipe info
-var searchRecipies = function(recipe) {
-    // format the spoonacular api url
-    var apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${recipe}&number=12`
-      
-    // make a request to the url
+    var apiUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?i=" + ingredient.slice(0, -1);
+    console.log("this is api to filter the list based on ingredients --------- " + apiUrl);
     fetch(apiUrl).then(function(response) {
-       // request was successful
-       if (response.ok) {
-        response.json().then(function(data) {
-          var htmlRecipeCards = recipeResults(data.results);
-          document.getElementById("cards-container").innerHTML = htmlRecipeCards;
-          var allButtons = document.querySelectorAll('.recipe-card');
+      response.json().then(function(data) {
+        if (data.drinks == "None Found") {
+          display.textContent = "No Result Found, Please Reset and Try a New Combination"
+        } else {
+          display.textContent = data.drinks.length + " drinks found: "
+          for (var i = 0; i < data.drinks.length; i++) {
+            var templist = document.createElement("li");
+            templist.setAttribute("class", "listitem");
+            templist.setAttribute("id", data.drinks[i].idDrink);
+            templist.textContent = data.drinks[i].strDrink;
+            display.appendChild(templist);
+          }
+        }
+      })});
+  }
+};
 
-    for (var i = 0; i < allButtons.length; i++) {
-      allButtons[i].addEventListener('click', function() {
-      //trigger the modal to show
-      $('#food-modal').show(); 
-      });
-    }
-        });
-      } else {
-        alert('Error: Unable to connect to Spoonacular' + response.statusText);
+var displayitem = function (drinkid) {
+  display.textContent = "";
+  while (display.lastElementChild) {
+    display.removeChild(display.lastElementChild);
+  };
+  var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkid;
+  fetch(apiUrl).then(function(response) {
+    response.json().then(function(data) {
+      console.log("this is API to find the drink detail ------- " + apiUrl);
+      var drink = data.drinks[0];
+      var item_name = document.createElement("h2");
+      var item_image = document.createElement("img");
+      item_name.textContent = drink.strDrink;
+      item_image.setAttribute("src", drink.strDrinkThumb);
+      itemtitle.appendChild(item_name);
+      itemtitle.appendChild(item_image);
       }
-    })
-    .catch(function(error) {
-      alert('Unable to connect to Spoonacular');
-    });
-};
-
- //create function to display selected recipe information
- var selectedInfo = function(id) {
-  //format the spoonacular API url
-  var apiUrl2 = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
-  //make a request to the url
-  fetch(apiUrl2).then(function(response) {
-   if (response.ok) {
-     response.json().then(function(data) {
-       var ingredients = "";
-       for (var i = 0; i < data.extendedIngredients.length; i++ ) {
-        ingredients += (data.extendedIngredients[i].amount + " " + data.extendedIngredients[i].unit + " " + data.extendedIngredients[i].name  + ", ");
-       }
-      document.querySelector("#htmlText2").remove();
-
-      var htmlText = ` <div id="htmlText2"> 
-      <p class="card-title">${data.title}</p> 
-      <p> ${data.summary}</p> 
-      <p class="card-detail">Ingredients:</p>
-      <p> ${ingredients} </p> 
-      <p class="card-detail">Instructions:</p>
-      <p> ${data.instructions}
-      <p class="card-detail"> Source: <a class="sourceURL" href="${data.sourceUrl}">${data.sourceUrl}</a></p> 
-      <div id=btnClose> <a class="closeBtn" href="#" rel="modal:close">Close</a> </div>
-      </div>`;
-      
-      document.querySelector("#food-modal").innerHTML += htmlText;
-     });
-   }
- })
+    )});
 };
 
 
-//display recipies on cards formatted in the HTML
-  var recipeResults = function(results) { 
-    var htmlCards = "";
-    for (var i = 0; i < results.length; i++ ) {
-    htmlCards += `
-  <div class="cell small-3 recipe-card" onclick="selectedInfo(${results[i].id})" data-id="${results[i].id}">
-    <div class="card">
+var addlist = function (name) {
+  var templist = document.createElement("li");
+  templist.textContent = name;
+  ingredientlist.appendChild(templist);
+};
+
+var search = function (event) {
+  event.preventDefault();
+  var ingredientname = searchbar.value.trim();
+  if (ingredientname) {
+    currentlist.push(ingredientname);
+    addlist(ingredientname);
+    displayonsearch();
+    searchbar.value = "";
+  } else {
+    alert("Please enter an ingredient username");
+  }
+};
+
+var resetsearch = function (event) {
+  event.preventDefault();
+  currentlist = [];
+  while (ingredientlist.lastElementChild) {
+    ingredientlist.removeChild(ingredientlist.lastElementChild);
+  };
+  displayonsearch();
+};
+
+var clearlist = function () {
+  display.textContent = "";
+  while (display.lastElementChild) {
+    display.removeChild(display.lastElementChild);
+  };
+  while (itemtitle.lastElementChild) {
+    itemtitle.removeChild(itemtitle.lastElementChild);
+  };
+}
+
+var loadingoption = function () {
+  var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+  console.log("This is api to load all options into dropdown option ---- " + apiUrl);
+  fetch(apiUrl).then(function(response) {
+    response.json().then(function(data) {
+      for (var i = 0; i < data.drinks.length; i++) {
+        var templist = document.createElement("option");
+        templist.textContent = data.drinks[i].strIngredient1;
+        templist.setAttribute("value", data.drinks[i].strIngredient1.replace(' ', '_'))
+        choose.appendChild(templist);
+      }
+  })});
+};
+
+$("#chooselist").on("change", function(event) {
+  searchbar.value = this.value;
+});
+
+$("#displaylist").on("click", ".listitem", function() {
+  var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + this.id;
+  fetch(apiUrl).then(function(response) {
+    response.json().then(function(data) {
+      displayitem(data.drinks[0].idDrink);
+    })});
   
-      <div class="card-section">
-      <a href="#food-modal" rel="modal:open"> <img src="${results[i].image}"> </a>
-      <a href="#food-modal" rel="modal:open"> <p class="food-title">${results[i].title}</p> </a>
-      </div>
-    </div>
-  </div>`
-    }
-    return htmlCards
- };
-  
-userFormEl.addEventListener("submit", formSumbitHandler);
+});
+
+searchbtn.addEventListener("click", search);
+resetbtn.addEventListener("click", resetsearch);
+loadingoption();
