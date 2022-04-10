@@ -4,6 +4,7 @@
   --tertiary-color: rgb(39, 37, 37);
 }
 
+/* set styles for the background image */
 .background {
   background: url('../img/img-1.jpg');
   height: 550px;
@@ -13,6 +14,7 @@
   position: relative;
 }
 
+/* set styles for the header */
 header {
   display: flex;
   justify-content: space-between;
@@ -66,6 +68,7 @@ header a {
   text-shadow: 3px 3px 2px black;
 }
 
+/*styles for the search box */
 .card-search {
   padding: 25px;
   text-align: center;
@@ -104,6 +107,7 @@ header a {
   color:rgb(189, 187, 187);
 }
 
+/*styles for footer */
 footer {
   display: flex;
   justify-content: space-between;
