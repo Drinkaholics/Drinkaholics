@@ -5,24 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    
     <title>Drinkaholics</title>
 </head>
 
 <body>
-    <!--header-->
-    <header>
-        <h1>Drinkaholics</h1>
-    </header>
-    <!--main weather content-->
+    <div class= "background">
+        <header>
+            <h1>Drinkaholics</h1>
+            <a href="https://github.com/Drinkaholics/Drinkaholics" target="_blank">Who We Are</a>  
+        </header>
+
+        <section id="description" class="hero">
+            <div id="p1" class="hero-cta">
+                <h4>Love to drink cocktails? You on the right page!</h4>
+                <p>
+                    Drinkaholics is a cocktail creation application tool 
+                    that allows individuals to search for cocktails, or pick ingredients they have at their disposals and mix them to show what cocktails they can make out of them.
+                </p>
+            </div>
+        </section>
+    </div>
+
     <main>
-        <!--left column-->
-        <div>
-            <h2 class="card-title bold">Search for drinks:</h2>
+        
+        <div class="card-search">
+            <div style="text-align: center"><img src="./assets/img/logo1.png" width="150" /></div>
+            <h2 id="Search" class="card-title bold">Search For Drinks <br> or <br> Use Dropdown Menu</h2>
             <form id="search-form">
-                    <label for="chooseingredient">Choose an ingredient:</label>
                     <select name="chooseingredient" id="chooselist">
-                        <option value="" disabled selected>Choose your option</option>
+                        <option id="choose" value="" disabled selected>Choose your option</option>
                     </select>
                     <input input type="text" placeholder="Type your drink" id="ingredients">
                     <button type="click" class="button expanded" id="submit-button">Search</button>
@@ -44,6 +61,21 @@
             <div id = "displaylist" class = "flex-row"></div>
         </div>
     </main>
+
+
+
+
+    <footer>
+        <h6>
+            Made by The Team 3 UofT
+        </h6>
+        <div>
+            &copy; Drinkaholics
+        </div>
+    </footer>
+
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
