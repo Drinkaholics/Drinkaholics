@@ -156,7 +156,54 @@ img {
   max-width: 350px;
 }
 
+#displaylist {
+  display: flexbox;
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+  margin-bottom: 40px;
+  margin-left: 25%;
+  border-radius: 30px;
+}
 
+#displaytitle {
+  display: flexbox;
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+  margin-bottom: 40px;
+  margin-left: 25%;
+  border-radius: 30px;
+}
+
+
+#search-history {
+  display: flexbox;
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  margin-bottom: 40px;
+  margin-left: 25%;
+  border-radius: 30px;
+}
+
+#iteminfo {
+  display: flexbox;
+  padding: 25px;
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  margin-bottom: 40px;
+  margin-left: 25%;
+  border-radius: 30px;
+}
 
 @media screen and (max-width: 575px) {
   header {
