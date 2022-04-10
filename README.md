@@ -35,7 +35,7 @@ Then only drinks with that specific alcohol will remain visible
 # Our Deployed App; Link to Website and Screenshots
 [Drinkaholics Link](https://drinkaholics.github.io/Drinkaholics/)
 
-a screenshot of our website
+![Alt text](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot.jpg)
 
 # Licensing
 We can put a placeholder here for it but I don't think it's necessary.
