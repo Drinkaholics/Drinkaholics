@@ -96,7 +96,7 @@ var addlist = function (name) {
   var templist = document.createElement("li");
   templist.textContent = name;
   var b = document.createElement("button");
-  b.setAttribute("class", "alert button");
+  b.setAttribute("class", "alert button tiny");
   b.setAttribute("type", "click");
   b.textContent = "X";
   templist.appendChild(b);
@@ -114,7 +114,7 @@ var search = function (event) {
     displayonsearch();
     searchbar.value = "";
   } else {
-    alert("Please enter an ingredient username");
+    title.textContent = "Please enter an ingredient username";
   }
 };
 
@@ -189,11 +189,14 @@ $("#chooselist").on("change", function(event) {
 // delete added ingredient
 $("#search-history").on("click", "button", function(event){
   var temp = this.parentElement.textContent.slice(0, -1);
+  if (currentlist.length == 1) {
+    currentlist.pop();
+  } else {
   for (var i = 0; i < currentlist.length; i++) {
     if (currentlist[i] == temp) {
       currentlist.pop(i);
     }
-  };
+  }};
   this.parentElement.remove();
   displayonsearch();
 });

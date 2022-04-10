@@ -70,6 +70,7 @@ header a {
 
 /*styles for the search box */
 .card-search {
+  margin-top: 1%;
   padding: 25px;
   text-align: center;
   width: 50%;
@@ -84,11 +85,38 @@ header a {
   font-family: Space Bd BT;
 }
 
+ul {
+  list-style: none;
+}
+
+.searchhistory li {
+  margin:5%;
+}
+
+.searchhistory button {
+  margin: 1%;
+  padding: 1%;
+}
+
 .card-search button {
   background-color: var(--primary-color);
   color: whitesmoke;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.displaylist button {
+  background-color: var(--primary-color);
+  color: whitesmoke;
+  border-radius: 10px;
+  cursor: pointer;
+  width: fit-content;
+  margin-left: 90%;
+}
+
+.main-content {
+  font-family: Space Bd BT;
+  font-size: large;
 }
 
 #chooselist {
@@ -114,9 +142,7 @@ footer {
   border: 1px whitesmoke solid;
   background-color: var(--primary-color);
   color: whitesmoke;
-  position: fixed;
   bottom: 0;
-  width: 100%;
 }
 
 footer h6 {
@@ -151,7 +177,13 @@ footer div {
   flex-wrap: wrap;
 }
 
+.listitem:hover {
+  color: #fce138;
+  opacity: .5;
+}
+
 img {
+  align-self: center;
   padding: 5px;
   max-width: 350px;
 }
@@ -159,7 +191,6 @@ img {
 #displaylist {
   display: flexbox;
   padding: 25px;
-  text-align: center;
   width: 50%;
   background-color: var(--secondary-color);
   box-shadow: 0 0 15px rgb(255, 255, 255);
@@ -169,6 +200,7 @@ img {
 }
 
 #displaytitle {
+  font-weight: bold;
   display: flexbox;
   padding: 25px;
   text-align: center;
