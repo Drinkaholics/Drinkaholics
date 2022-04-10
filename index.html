@@ -10,17 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    
+    <!--Title-->
     <title>Drinkaholics</title>
 </head>
 
 <body>
+    <!--Header section-->
     <div class= "background">
         <header>
             <h1>Drinkaholics</h1>
             <a href="https://github.com/Drinkaholics/Drinkaholics" target="_blank">Who We Are</a>  
         </header>
-
+        <!--Welcome description-->
         <section id="description" class="hero">
             <div id="p1" class="hero-cta">
                 <h4>Love to drink cocktails? You on the right page!</h4>
@@ -38,17 +39,19 @@
             <div style="text-align: center"><img src="./assets/img/logo1.png" width="150" /></div>
             <h2 id="Search" class="card-title bold">Search For Drinks <br> or <br> Use Dropdown Menu</h2>
             <form id="search-form">
+                <!--Placeholder and dropdown menu-->
                     <select name="chooseingredient" id="chooselist">
                         <option id="choose" value="" disabled selected>Choose your option</option>
                     </select>
                     <input input type="text" placeholder="Type your drink" id="ingredients">
                     <button type="click" class="button expanded" id="submit-button">Search</button>
                 </form>
+                <!--Button section-->
                 <div class="expanded button-group">
                     <button class="button" id="reset">Reset</button>
                     <button class="button" id="saved">Saved Cocktails</button>
                 </div>
-            <!--search history div-->
+            <!--Search history div-->
             <div class="divider">
                 <ul id="search-history" class = "browser-default"></ul>
             </div>
@@ -62,9 +65,7 @@
         </div>
     </main>
 
-
-
-
+<!--Footer section-->
     <footer>
         <h6>
             Made by The Team 3 UofT
@@ -73,8 +74,6 @@
             &copy; Drinkaholics
         </div>
     </footer>
-
-
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
