@@ -1,34 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
 header {
   height: 200px;
   background-image: url("../img/img-1.jpg");
   color: rgb(255, 255, 255);
+  text-align: center;
 }
 
-/*custom CSS*/
-/*border for button history div*/
+
 .divider {
   border-top: 2px solid rgb(128, 128, 128);
-}
-
-/*bold font*/
-.bold {
-  font-weight: bold;
-}
-
-/*current and forecast condition font size*/
-.font-size {
-  font-size: 18px;
-}
-
-/*card styling*/
-.card-style {
-  min-width: 150px;
-  color: rgb(255, 255, 255);
-  background: rgb(112, 172, 197);
 }
 
 .flex-row {
@@ -40,4 +19,9 @@ header {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+img {
+  padding: 5px;
+  max-width: 350px;
 }
