@@ -10,9 +10,11 @@ var displaysave = document.querySelector("#saved");
 var currentlist = [];
 var saveddrink = [];
 
+//this function displays cocktails based on ingredients
 var displayonsearch = function() {
   var apiUrl = "";
   clearlist();
+  //default is 10 random cocktails display
   if (currentlist.length == 0) {
     apiUrl = "https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php";
   } else {
@@ -46,6 +48,7 @@ var displayonsearch = function() {
   });
 };
 
+// this function is displaying clicked cocktail's detail
 var displayitem = function (drinkid) {
   title.textContent = "";
   while (display.lastElementChild) {
@@ -88,7 +91,7 @@ var displayitem = function (drinkid) {
     )});
 };
 
-
+// this function adds ingredients to history list when click on search
 var addlist = function (name) {
   var templist = document.createElement("li");
   templist.textContent = name;
@@ -100,6 +103,7 @@ var addlist = function (name) {
   ingredientlist.appendChild(templist);
 };
 
+// this function will call last function if click on search
 var search = function (event) {
   event.preventDefault();
   chooselist.value = "";
@@ -114,6 +118,7 @@ var search = function (event) {
   }
 };
 
+// this function will reset everything and return to the default page(10 random drink)
 var resetsearch = function (event) {
   event.preventDefault();
   currentlist = [];
@@ -123,6 +128,7 @@ var resetsearch = function (event) {
   displayonsearch();
 };
 
+// this function will display saved drink(localstroage)
 var displaysaved = function () {
   clearlist();
   if (saveddrink.length == 0) {
@@ -145,6 +151,7 @@ var displaysaved = function () {
   }
 };
 
+// this function will clear refresh display board
 var clearlist = function () {
   display.textContent = "";
   while (display.lastElementChild) {
@@ -155,6 +162,7 @@ var clearlist = function () {
   };
 }
 
+// when this web is opened, loading options into select bar
 var loadingoption = function () {
   var templist = [];
   var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
@@ -173,10 +181,12 @@ var loadingoption = function () {
   })});
 };
 
+// automatically input text
 $("#chooselist").on("change", function(event) {
   searchbar.value = this.value;
 });
 
+// delete added ingredient
 $("#search-history").on("click", "button", function(event){
   var temp = this.parentElement.textContent.slice(0, -1);
   for (var i = 0; i < currentlist.length; i++) {
@@ -188,6 +198,7 @@ $("#search-history").on("click", "button", function(event){
   displayonsearch();
 });
 
+// call the clicked cocktail
 $("#displaylist").on("click", ".listitem", function() {
   var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + this.id;
   fetch(apiUrl).then(function(response) {
@@ -196,6 +207,7 @@ $("#displaylist").on("click", ".listitem", function() {
     })});
 });
 
+// click to save cocktail
 $("#displaylist").on("click", "button", function(event) {
   if (this.textContent == "Save") {
     this.textContent = "Saved";
@@ -211,6 +223,7 @@ $("#displaylist").on("click", "button", function(event) {
   save();
 });
 
+//localstroage
 var save = function() {
   localStorage.setItem("saved", JSON.stringify(saveddrink));
 };
