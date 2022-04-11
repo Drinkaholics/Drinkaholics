@@ -85,9 +85,19 @@ var displayitem = function (drinkid) {
       } else {
         savebtn.textContent = "Save";
       };
+
+      var backbtn = document.createElement("button");
+      backbtn.setAttribute("class", "button");
+      backbtn.textContent = "Refresh"
+      const refreshPage = () => {
+        location.reload();
+      }
+      backbtn.addEventListener('click', refreshPage);
+  
       display.appendChild(temp);
       display.appendChild(savebtn);
-      }
+      display.appendChild(backbtn);    
+      }     
     )});
 };
 
@@ -132,7 +142,7 @@ var resetsearch = function (event) {
 var displaysaved = function () {
   clearlist();
   if (saveddrink.length == 0) {
-    title.textContent = "You haven't saved any drink yet";
+    title.textContent = "You haven't saved any drinks yet";
   } else {
     for (var i = 0; i < saveddrink.length; i++) {
       var apiUrl = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + saveddrink[i];
@@ -215,7 +225,8 @@ $("#displaylist").on("click", "button", function(event) {
   if (this.textContent == "Save") {
     this.textContent = "Saved";
     saveddrink.push(this.id);
-  } else {
+  }
+  else {
     this.textContent = "Save";
     for (var i = 0; i < saveddrink.length; i++) {
       if (saveddrink[i] == this.id) {
