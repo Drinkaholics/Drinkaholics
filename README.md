@@ -39,9 +39,9 @@ Then only drinks with that specific alcohol will remain visible
 # Our Deployed App; Link to Website and Screenshots
 [Drinkaholics Link](https://drinkaholics.github.io/Drinkaholics/)
 
-![screenshots of our website on multiple platforms](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_1.jpg)
+![screenshots of our website on multiple platforms](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_1.png)
 
-![screenshot 2](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_2.jpg)
+![screenshot 2](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_2.png)
 
-![screenshot 3](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_3.jpg)
+![screenshot 3](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_3.png)
 
