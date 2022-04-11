@@ -80,7 +80,7 @@ var displayitem = function (drinkid) {
       savebtn.setAttribute("class", "button");
       savebtn.setAttribute("type", "click");
       savebtn.setAttribute("id", drink.idDrink);
-      if (saveddrink.includes(drink.idDrink))  {
+      if (saveddrink.includes(drink.idDrink)) {
         savebtn.textContent = "Saved";
       } else {
         savebtn.textContent = "Save";
@@ -93,19 +93,11 @@ var displayitem = function (drinkid) {
         location.reload();
       }
       backbtn.addEventListener('click', refreshPage);
-    
-
-    
-
-
+  
       display.appendChild(temp);
       display.appendChild(savebtn);
-      display.appendChild(backbtn);
-
-
-     
-      }
-     
+      display.appendChild(backbtn);    
+      }     
     )});
 };
 
