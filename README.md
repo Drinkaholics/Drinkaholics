@@ -34,10 +34,14 @@ Then only drinks with that specific alcohol will remain visible
 * Arseniy
 
 # Our Logo
-![Alt text](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/logo1.png)
+![our logo here](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/logo1.png)
 
 # Our Deployed App; Link to Website and Screenshots
 [Drinkaholics Link](https://drinkaholics.github.io/Drinkaholics/)
 
-![Alt text](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot.jpg)
+![screenshots of our website on multiple platforms](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_1.jpg)
+
+![screenshot 2](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_2.jpg)
+
+![screenshot 3](https://github.com/Drinkaholics/Drinkaholics/blob/main/assets/img/screenshot_3.jpg)
 
